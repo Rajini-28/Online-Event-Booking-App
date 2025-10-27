@@ -3,7 +3,7 @@ const events = [
   {
     id: 1,
     name: "Cultural Fest",
-    date: "2025-10-31",
+    date: "2024-09-20",
     time: "6:00 PM",
     place: "City Hall",
     description: "A cultural fest to showcase the talents of local artists",
@@ -12,7 +12,7 @@ const events = [
   {
     id: 2,
     name: "Award Ceremony",
-    date: "2025-11-25",
+    date: "2024-09-25",
     time: "8:00 PM",
     place: "Grand Ballroom",
     description: "An award ceremony to recognize outstanding achievements",
@@ -21,7 +21,7 @@ const events = [
   {
     id: 3,
     name: "Team Building Event",
-    date: "2025-11-20",
+    date: "2024-09-22",
     time: "9:00 AM",
     place: "Outdoor Activities Center",
     description: "A team building event to foster collaboration and teamwork",
@@ -29,8 +29,12 @@ const events = [
   }
 ];
 
-let bookedEventsCount = 0;
-let notBookedEventsCount = events.length;
+function updateBookedEventsCount() {
+  document.getElementById("booked-events-count").textContent = events.filter(event => event.booked).length;
+  document.getElementById("not-booked-events-count").textContent = events.filter(event => !event.booked).length;
+}
+
+updateBookedEventsCount();
 
 // Generate event list
 const eventList = document.getElementById("event-list");
@@ -82,10 +86,7 @@ function showBookingForm(event) {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
     event.booked = true;
-    bookedEventsCount++;
-    notBookedEventsCount--;
-    document.getElementById("booked-events-count").textContent = bookedEventsCount;
-    document.getElementById("not-booked-events-count").textContent = notBookedEventsCount;
+    updateBookedEventsCount();
     showConfirmationMessage(event, name, email, phone);
   });
 }
@@ -102,6 +103,3 @@ function showConfirmationMessage(event, name, email, phone) {
   `;
   confirmationMessage.style.display = "block";
 }
-
-document.getElementById("booked-events-count").textContent = bookedEventsCount;
-document.getElementById("not-booked-events-count").textContent = notBookedEventsCount;
