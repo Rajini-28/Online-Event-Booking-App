@@ -12,7 +12,7 @@ const events = [
   {
     id: 2,
     name: "Award Ceremony",
-    date: "2025-12-25",
+    date: "2025-11-25",
     time: "8:00 PM",
     place: "Grand Ballroom",
     description: "An award ceremony to recognize outstanding achievements",
@@ -21,7 +21,7 @@ const events = [
   {
     id: 3,
     name: "Team Building Event",
-    date: "2025-10-28",
+    date: "2025-11-20",
     time: "9:00 AM",
     place: "Outdoor Activities Center",
     description: "A team building event to foster collaboration and teamwork",
@@ -42,7 +42,7 @@ events.forEach(event => {
     <p>Date: ${event.date}</p>
     <p>Time: ${event.time}</p>
     <p>Place: ${event.place}</p>
-    <button class="book-now-btn" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">View Details</button>
+    <button class="submit-btn">View Details</button>
   `;
   eventList.appendChild(eventItem);
 
@@ -56,12 +56,12 @@ events.forEach(event => {
 function showEventDetails(event) {
   const eventDetails = document.getElementById("event-details");
   eventDetails.innerHTML = `
-    <h2 style="color: #007bff;">${event.name}</h2>
+    <h2>${event.name}</h2>
     <p>Date: ${event.date}</p>
     <p>Time: ${event.time}</p>
     <p>Place: ${event.place}</p>
     <p>${event.description}</p>
-    <button class="book-now-btn" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px;">Book Now</button>
+    <button class="submit-btn">Book Now</button>
   `;
 
   // Add event listener to book now button
@@ -94,7 +94,7 @@ function showBookingForm(event) {
 function showConfirmationMessage(event, name, email, phone) {
   const confirmationMessage = document.getElementById("confirmation-message");
   confirmationMessage.innerHTML = `
-    <h2 style="color: #007bff;">Booking Confirmation</h2>
+    <h2>Booking Confirmation</h2>
     <p>Event: ${event.name}</p>
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
