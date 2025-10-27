@@ -3,7 +3,7 @@ const events = [
   {
     id: 1,
     name: "Cultural Fest",
-    date: "2024-09-20",
+    date: "2025-10-31",
     time: "6:00 PM",
     place: "City Hall",
     description: "A cultural fest to showcase the talents of local artists",
@@ -12,7 +12,7 @@ const events = [
   {
     id: 2,
     name: "Award Ceremony",
-    date: "2024-09-25",
+    date: "2025-11-25",
     time: "8:00 PM",
     place: "Grand Ballroom",
     description: "An award ceremony to recognize outstanding achievements",
@@ -21,7 +21,7 @@ const events = [
   {
     id: 3,
     name: "Team Building Event",
-    date: "2024-09-22",
+    date: "2025-11-22",
     time: "9:00 AM",
     place: "Outdoor Activities Center",
     description: "A team building event to foster collaboration and teamwork",
